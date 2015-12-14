@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>{{ url_for(document.name) }}</id>
+    <title type="text">{{ document.title }}</title>
+    <updated>{{ now() }}</updated>
+    <link href="{{ url_for('/') }}"/>
+    <link href="{{ url_for(document.name) }}" rel="self"/>
+    <author>
+        <name>{{ document.author }}</name>
+    </author>
+    {% for recent_document in documents %}
+    <entry>
+        <title type="text">{{ recent_document.title }}</title>
+        <id>{{ url_for(recent_document.name) }}</id>
+        <updated>{{ recent_document.date }}</updated>
+        <link href="{{ url_for(recent_document.name) }}" />
+        <summary type="html">{{ recent_document.description }}</summary>
+    </entry>
+  {% endfor %}
+</feed>

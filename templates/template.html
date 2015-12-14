@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="author" content="{{ document.author}}"/>
+        <meta name="robots" content="index,follow"/>
+        <link rel="stylesheet" type="text/css" href="{{ resource('style.css') }}"/>
+        <link rel="alternate" type="application/atom+xml" title="RSS Feed" href="{{ url_for('atom.xml') }}"/>
+	      <meta name="description" content="{{ document.description }}"/>
+	      <meta name="keywords" content="{{ document.keywords }}"/>
+	      <title>{{ document.title }}</title>
+    </head>
+
+    <body>
+      <h1>{{ document.title }}</h1>
+      {% filter markdown %}
+      {{ document.markdown }}
+      {% endfilter %}
+    </body>
+</html>

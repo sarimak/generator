@@ -1,0 +1,10 @@
+title: Home page
+description: Description
+date: 2015-12-14
+template: page.html
+keywords: keyword1, keyword2
+
+## Header
+Website contents
+![picture.png](A picture)
+[http://website.domain](A link)
